@@ -1,9 +1,9 @@
 import Nullstack from 'nullstack';
+import './Application.scss';
 
 import TodoList from './Todolist.njs';
 
 import './styles/global.scss';
-import './Application.scss';
 
 class Application extends Nullstack {
 
