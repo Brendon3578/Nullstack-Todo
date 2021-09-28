@@ -1,0 +1,34 @@
+.todo__item .todo__popup{
+  visibility: hidden;
+  position: absolute;
+  width: 120px;
+  padding: 8px 0;
+  margin-left: 0px;
+  bottom: 130%;
+  left: -53px;
+  border-radius: 6px;
+  
+  font-size: 0.875rem;
+  text-align: center;
+  background-color: var(--bg-color-gray-250);
+  color: var(--yellow-2);
+  z-index: 1;
+  opacity: 0;
+
+  @keyframes openPopUp{
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  &::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--bg-color-gray-250) transparent transparent transparent;
+  }
+
+}
