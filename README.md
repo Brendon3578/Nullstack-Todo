@@ -1,7 +1,5 @@
 # Nullstack Todo
 
-<img src='https://raw.githubusercontent.com/nullstack/nullstack/master/nullstack.png' height='60' alt='Nullstack' />
-
 ## 💻 Projeto
 
 Apenas um projeto simples de Todo utilizando o framework Nullstack.
@@ -29,6 +27,8 @@ Rode o ambiente no modo de desenvolvimento:
 Abra [http://localhost:5000](http://localhost:5000) e veja o projeto no seu navegador. 
 
 ## 🧐 Aprenda mais sobre o Nullstack
+
+<img src='https://raw.githubusercontent.com/nullstack/nullstack/master/nullstack.png' height='60' alt='Nullstack' />
 
 [Read the documentation](https://nullstack.app/documentation)
 
