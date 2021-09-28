@@ -1,9 +1,11 @@
-# Nullstack Todo
+# 🍮 Nullstack Todo 🍮
 
 ## 💻 Projeto
 
 Apenas um projeto simples de Todo utilizando o framework Nullstack.
 ainda pretendo adicionar novas features para salvar os Todos criados.
+
+- [Acesse o projeto](https://nullstack-todo.herokuapp.com/)
 
 ## 🚀 Como rodar o projeto
 
