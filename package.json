@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "npx nullstack start",
-    "build": "npx webpack --config node_modules/nullstack/webpack.config.js build --mode=ssg --output=ssg"
+    "build": "npx nullstack build"
   },
   "dependencies": {
     "nulla": "^0.7.4"
