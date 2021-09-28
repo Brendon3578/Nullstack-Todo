@@ -1,7 +1,7 @@
 import Nullstack from 'nullstack';
 import './Application.scss';
 
-import TodoList from './Todolist.njs';
+import TodoList from './TodoList.njs';
 
 import './styles/global.scss';
 
