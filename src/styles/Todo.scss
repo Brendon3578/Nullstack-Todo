@@ -1,6 +1,7 @@
 .todo__container{
   display: flex;
   flex-direction: column;
+  padding: 0 8px;
   gap: 5px;
   border-radius: 5px;
 
@@ -10,13 +11,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--white-50);
       background-color: var(--bg-color-gray-100);
       border-radius: 8px;
       padding: 10px 15px;
       padding-bottom: 20px;
       border-bottom: 2px solid var(--bg-color-gray-150);
+      animation: todoAppear 0.8s ease;
       transition: 0.2s;
 
       &:not(:last-child){
@@ -151,5 +153,31 @@
     input[type="checkbox"]{
       display: none;
     }
+  }
+}
+
+
+@keyframes todoAppear {
+  from {
+    transform: translateX(-32px);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px){
+  .main .container .title{
+    font-size: 2.75rem;
+
+    span{
+      font-size: 2rem;
+    }
+  }
+
+  .todo__container .todo__list .todo__item{
+    font-size: 1rem;
   }
 }

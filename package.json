@@ -10,5 +10,6 @@
   "scripts": {
     "start": "npx nullstack start",
     "build": "npx nullstack build --mode=ssr"
-  }
+  },
+  "dependencies": {}
 }

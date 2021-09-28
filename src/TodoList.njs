@@ -18,21 +18,20 @@ class TodoList extends Nullstack {
       createdDate: '08/08/2018 12:43'
     }, {
       id: 1,
-      description: 'Viajar no tempo e evitar que esse projeto seja feito',
-      complete: false,
-      createdDate: '28/09/2021 18:43'
-    }, {
-      id: 2,
-      description: 'Adicionar uma biblioteca pra guardar os Todos',
-      complete: false,
-      createdDate: '13/05/2012 08:43'
-    }, {
-      id: 3,
-      description: 'Dar star nesse projeto no github. 😉',
+      description: 'Deixar uma estrela nesse projeto no github. 😉',
       complete: false,
       createdDate: '28/09/2021 12:50'
+    }, {
+      id: 2,
+      description: 'Deixar outra estrela no Nullstack no github. 🌟',
+      complete: false,
+      createdDate: '01/01/2001 01:02'
     }
-  ]
+  ]}
+
+  saveTodosInLocalStorage ({TodoArray}) {
+    const todoArrayStringfied = JSON.stringify(TodoArray)
+    localStorage.setItem('todosKey', todoArrayStringfied)
   }
 
   handleDeleteTodo({TodoArray,data}){
@@ -46,6 +45,7 @@ class TodoList extends Nullstack {
         TodoArray[i].id = [i]
       }
     }
+    this.saveTodosInLocalStorage()
   }
 
   renderTodoItem({todoValue}){
@@ -54,6 +54,7 @@ class TodoList extends Nullstack {
         <label class="b-contain todo__checkbox">
           <input type="checkbox"
             bind={todoValue.complete}
+            onclick={this.saveTodosInLocalStorage}
           />
           <div class="b-input" />
         </label>
