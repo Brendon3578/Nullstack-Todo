@@ -1,12 +1,13 @@
 /* function to add zero in the parts date:
-  input | output:
-    2   |  02
-    9   |  09
-    10  |  10
+   input | output:
+     2   |  02
+     9   |  09
+     10  |  10
 */ 
 const formatPartDate = datePart =>
-  (String(datePart).length == 1) ? `0${datePart}` : datePart ;
+  (String(datePart).length == 1) ? `0${datePart}` : datePart;
 
+// function to get the current datetime
 export default function createTodoDate(){
   const TodoDate = new Date()
   let parsedTodoDate

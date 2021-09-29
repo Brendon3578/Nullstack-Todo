@@ -1,7 +1,7 @@
 import Nullstack from 'nullstack';
 
 import EmptyTodolist from './EmptyTodolist.njs';
-import TodoCounter from './TodoCounter.njs';
+import TodoPending from './TodoPending.njs';
 import TodoForm from './TodoForm.njs';
 
 import './styles/Todo.scss'
@@ -17,13 +17,17 @@ class TodoList extends Nullstack {
   hydrate({TodoArray}){
     // get todos in local storage
     const localStorageTodos = JSON.parse(localStorage.getItem('todosKey'))
+
     if (localStorageTodos != null) {
-      // remove __isProxy atribute to user can set new values to todo
+      // remove '_isProxy' atribute to user can set new values to todo
       localStorageTodos.forEach(todo => {
         delete todo._isProxy
       })
+
+      // catch the Todos and set on the TodoArray context
       localStorageTodos.forEach(todo => TodoArray.push(todo))
       TodoArray = localStorageTodos
+
     } else {
       // if is first run of the aplication OR localStorage = null
       TodoArray.push(
@@ -31,35 +35,35 @@ class TodoList extends Nullstack {
           id: 0,
           description: 'Comer pudim que está na geladeira faz 1 mês',
           complete: true,
-          createdDate: '08/08/2018 12:43'
+          createdDate: '21/10/2015 13:52'
         },
         {
           id: 1,
-          description: 'Deixar uma estrela nesse projeto no github. 😉',
+          description: 'Deixar uma estrela nesse projeto no github 😉',
           complete: false,
-          createdDate: '28/09/2021 12:50'
+          createdDate: '28/09/2021 23:46'
         },
         {
           id: 2,
-          description: 'Deixar outra estrela no Nullstack no github. 🌟',
+          description: 'Deixar outra estrela no github do Nullstack 🌟',
           complete: false,
-          createdDate: '01/01/2001 01:02'
-        })
-      }
+          createdDate: '28/01/2019 18:20'
+      })  
+    }
   }
 
   saveTodosInLocalStorage ({TodoArray}) {
-    const todoArrayStringfied = JSON.stringify(TodoArray)
-    localStorage.setItem('todosKey', todoArrayStringfied)
+    localStorage.setItem('todosKey', JSON.stringify(TodoArray))
   }
 
   handleDeleteTodo({TodoArray,data}){
     TodoArray.splice(data.todoId, 1);
     
-    // Update Todos id when one Todo is deleted
+    // update Todos id when one Todo is deleted
     for (let i = 0; i < TodoArray.length; i++){
       TodoArray[i].id = i
     }
+
     this.saveTodosInLocalStorage()
   }
 
@@ -77,9 +81,10 @@ class TodoList extends Nullstack {
         <span class="todo__description">
           {todoValue.description}
         </span>
-        <button class="todo__button button--delete"
+        <button type="button" class="todo__button button--delete"
           onclick={this.handleDeleteTodo}
           data-todo-id={todoValue.id}
+          title="Remover tarefa"
         >
           <i class="fas fa-times" />
         </button>
@@ -94,7 +99,7 @@ class TodoList extends Nullstack {
   }
   
   render({TodoArray}) {
-
+    
     return (
       <div class="todo__container">
         <ul class="todo__list">
@@ -104,7 +109,7 @@ class TodoList extends Nullstack {
             TodoArray.map(element => <TodoItem todoValue={element} /> )
           }
         </ul>
-        <TodoCounter />
+        <TodoPending />
         <TodoForm />
       </div>
     )

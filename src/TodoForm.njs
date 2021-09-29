@@ -5,8 +5,9 @@ import createTodoDate from './utils/createTodoDate.njs';
 class TodoForm extends Nullstack {
   description = ''
 
-  handleSendTodo({TodoArray}){
-    if (this.description == ''){ return false }
+  handleSendNewTodo({TodoArray}){
+    if (this.description.trim() == ''){ return false }
+    
     else {
       TodoArray.push({
         id: TodoArray.length,
@@ -23,8 +24,8 @@ class TodoForm extends Nullstack {
 
   render() {
     return (
-      <form onsubmit={this.handleSendTodo} class="todo__form">
-        <button class="todo__button button--add">
+      <form onsubmit={this.handleSendNewTodo} class="todo__form">
+        <button type="button" class="todo__button button--add" title="Adicionar nova tarefa">
           <i class="fas fa-plus" />
         </button>
         <input type="text"

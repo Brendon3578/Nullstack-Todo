@@ -22,7 +22,7 @@ NULLSTACK_PROJECT_COLOR="#D22365"
 NULLSTACK_SERVER_PORT="5000"
 ```
 
-Rode o ambiente no modo de desenvolvimento:
+Inicie o ambiente no modo de desenvolvimento:
 
 `npm start`
 
