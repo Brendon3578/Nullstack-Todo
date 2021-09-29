@@ -8,7 +8,7 @@ import './styles/global.scss';
 class Application extends Nullstack {
 
   prepare({ page, project }) {
-    page.title = `${project.name}`
+    page.title = `Nullstack Todo`
     page.locale = 'pt-BR';
   }
 
@@ -29,6 +29,7 @@ class Application extends Nullstack {
     return (
       <>
         <Head />
+        
         <main class="main">
           <div class="container">
             <h1 class="title">

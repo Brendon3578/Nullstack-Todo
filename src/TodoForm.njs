@@ -5,11 +5,6 @@ import createTodoDate from './utils/createTodoDate.njs';
 class TodoForm extends Nullstack {
   description = ''
 
-  saveTodosInLocalStorage ({TodoArray}) {
-    const todoArrayStringfied = JSON.stringify(TodoArray)
-    localStorage.setItem('todosKey', todoArrayStringfied)
-  }
-
   handleSendTodo({TodoArray}){
     if (this.description == ''){ return false }
     else {
@@ -22,7 +17,8 @@ class TodoForm extends Nullstack {
     }
 
     this.description = ''
-    this.saveTodosInLocalStorage()
+
+    localStorage.setItem('todosKey', JSON.stringify(TodoArray))
   }
 
   render() {

@@ -11,23 +11,42 @@ import './styles/checkbox.scss'
 class TodoList extends Nullstack {
 
   prepare(context){
-    context.TodoArray = [{
-      id: 0,
-      description: 'Comer pudim que está na geladeira faz 1 mês',
-      complete: true,
-      createdDate: '08/08/2018 12:43'
-    }, {
-      id: 1,
-      description: 'Deixar uma estrela nesse projeto no github. 😉',
-      complete: false,
-      createdDate: '28/09/2021 12:50'
-    }, {
-      id: 2,
-      description: 'Deixar outra estrela no Nullstack no github. 🌟',
-      complete: false,
-      createdDate: '01/01/2001 01:02'
-    }
-  ]}
+    context.TodoArray = []
+  }
+
+  hydrate({TodoArray}){
+    // get todos in local storage
+    const localStorageTodos = JSON.parse(localStorage.getItem('todosKey'))
+    if (localStorageTodos != null) {
+      // remove __isProxy atribute to user can set new values to todo
+      localStorageTodos.forEach(todo => {
+        delete todo._isProxy
+      })
+      localStorageTodos.forEach(todo => TodoArray.push(todo))
+      TodoArray = localStorageTodos
+    } else {
+      // if is first run of the aplication OR localStorage = null
+      TodoArray.push(
+        {
+          id: 0,
+          description: 'Comer pudim que está na geladeira faz 1 mês',
+          complete: true,
+          createdDate: '08/08/2018 12:43'
+        },
+        {
+          id: 1,
+          description: 'Deixar uma estrela nesse projeto no github. 😉',
+          complete: false,
+          createdDate: '28/09/2021 12:50'
+        },
+        {
+          id: 2,
+          description: 'Deixar outra estrela no Nullstack no github. 🌟',
+          complete: false,
+          createdDate: '01/01/2001 01:02'
+        })
+      }
+  }
 
   saveTodosInLocalStorage ({TodoArray}) {
     const todoArrayStringfied = JSON.stringify(TodoArray)
@@ -38,12 +57,8 @@ class TodoList extends Nullstack {
     TodoArray.splice(data.todoId, 1);
     
     // Update Todos id when one Todo is deleted
-    let todoIdDeleted = data.todoId;
-
     for (let i = 0; i < TodoArray.length; i++){
-      if (TodoArray[i].id >= todoIdDeleted){
-        TodoArray[i].id = [i]
-      }
+      TodoArray[i].id = i
     }
     this.saveTodosInLocalStorage()
   }
