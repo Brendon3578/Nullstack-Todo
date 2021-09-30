@@ -1,18 +1,16 @@
 # 🍮 Nullstack Todo 🍮
 
-## 💻 Projeto
+Uma aplicação simples de Todo list (Lista de tarefas), criada utilizando o framework brasileiro Nullstack.
 
-Apenas um projeto simples de Todo utilizando o framework Nullstack.
-
-- [Acesse o projeto](https://nullstack-todo.herokuapp.com/)
+[Acesse o projeto](https://nullstack-todo.herokuapp.com/)
 
 ## 🚀 Como rodar o projeto
 
-Instale as denpendências:
+Instale as dependências:
 
 `npm install`
 
-Copie o seguinte modelo de ambiente para um arquivo **.env** no diretório raiz do projeto
+Crie um arquivo **.env** no diretório raiz do projeto e cole o seguinte modelo de variavel nele:
 
 ```sh
 NULLSTACK_PROJECT_NAME="Nullstack Todo"
@@ -27,11 +25,13 @@ Inicie o ambiente no modo de desenvolvimento:
 
 Abra [http://localhost:5000](http://localhost:5000) e veja o projeto no seu navegador. 
 
-## 🧐 Aprenda mais sobre o Nullstack
+## 🧐 Aprenda sobre o Nullstack
 
 <img src='https://raw.githubusercontent.com/nullstack/nullstack/master/nullstack.png' height='60' alt='Nullstack' />
 
-[Read the documentation](https://nullstack.app/documentation)
+- [Veja a Documentação](https://nullstack.app/getting-started)
+- [Como criar um projeto Todo](https://www.youtube.com/watch?v=jwEUGTy2RKs&t=1290s&ab_channel=TipsCode) *Criei esse projeto com base nesse fantastico tutorial*
+- [Nullstack - Youtube](https://www.youtube.com/channel/UCUNPaxoppH3lu6JTrUX78Ww)
 
 ## 📝 Licença
 
