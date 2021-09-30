@@ -4,6 +4,7 @@ import './Application.scss';
 import TodoList from './TodoList.njs';
 
 import './styles/global.scss';
+import Aside from './Aside.njs';
 
 class Application extends Nullstack {
 
@@ -27,9 +28,9 @@ class Application extends Nullstack {
 
   render() {
     return (
-      <>
+      <div class="application__content">
         <Head />
-        
+        <Aside />
         <main class="main">
           <div class="container">
             <h1 class="title">
@@ -40,7 +41,7 @@ class Application extends Nullstack {
             <TodoList />
           </div>
         </main>
-      </>
+      </div>
     )
   }
 

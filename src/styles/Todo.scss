@@ -89,7 +89,7 @@
     color: var(--pink);
     padding: 2px 8px;
 
-    transition: 0.2s;
+    transition: 0.1s;
 
     &:hover{ text-shadow: 0px 0px 5px var(--pink); }
     &:active{ text-shadow: none; }
@@ -101,52 +101,6 @@
     }
   }
 
-  .todo__counter{
-    display: flex;
-    justify-content: flex-end;
-
-    p{
-      padding: 5px 10px;
-      border-radius: 10px;
-      background-color: var(--bg-color-gray-100);
-      color: var(--yellow);
-    }
-  }
-
-  .todo__form{
-    background-color: var(--bg-color-gray-100);
-    border-radius: 5px;
-    padding: 10px 8px;
-    display: flex;
-
-    .form__input{
-      width: 100%;
-      color: var(--white);
-      font-size: 1.125rem;
-      font-weight: normal;
-      padding: 0px 10px;
-      background-color: var(--bg-color-gray-100);
-      border: 0px;
-      
-      &:focus{
-        outline: none;
-      }
-    }
-  }
-
-  .todo__empty{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    font-family: 'Crete Round', serif;
-    font-size: 1.2rem;
-    color: var(--yellow-2);
-
-    img{
-      width: 100px;
-    }
-  }
-
   .todo__checkbox {
     transform: translateY(-7px);
 
@@ -155,7 +109,6 @@
     }
   }
 }
-
 
 @keyframes todoAppear {
   from {

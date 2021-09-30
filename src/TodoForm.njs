@@ -1,5 +1,7 @@
 import Nullstack from 'nullstack';
 
+import './TodoForm.scss'
+
 import createTodoDate from './utils/createTodoDate.njs';
 
 class TodoForm extends Nullstack {
@@ -24,7 +26,10 @@ class TodoForm extends Nullstack {
 
   render() {
     return (
-      <form onsubmit={this.handleSendNewTodo} class="todo__form">
+      <form onsubmit={this.handleSendNewTodo}
+        class="todo__form"
+        autocomplete="off"
+      >
         <button type="button" class="todo__button button--add" title="Adicionar nova tarefa">
           <i class="fas fa-plus" />
         </button>

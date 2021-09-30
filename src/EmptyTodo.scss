@@ -1,0 +1,15 @@
+.todo__container .todo__empty{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Crete Round', serif;
+  font-size: 1.2rem;
+  color: var(--yellow-2);
+
+  span {
+    width: 60%;
+  }
+  img{
+    width: 100px;
+  }
+}

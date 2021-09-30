@@ -1,6 +1,6 @@
 import Nullstack from 'nullstack';
 
-import EmptyTodolist from './EmptyTodolist.njs';
+import EmptyTodolist from './EmptyTodo.njs';
 import TodoPending from './TodoPending.njs';
 import TodoForm from './TodoForm.njs';
 
@@ -109,8 +109,8 @@ class TodoList extends Nullstack {
             TodoArray.map(element => <TodoItem todoValue={element} /> )
           }
         </ul>
-        <TodoPending />
         <TodoForm />
+        <TodoPending />
       </div>
     )
   }

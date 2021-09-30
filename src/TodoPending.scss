@@ -1,0 +1,17 @@
+@keyframes todoPendingAppear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.todo__container .todo__pending{
+  display: flex;
+  justify-content: flex-end;
+  animation: todoPendingAppear 0.1s ease-in;
+
+  p{
+    padding: 5px 10px;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--bg-color-gray-100);
+    color: var(--yellow);
+  }
+}
